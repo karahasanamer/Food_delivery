@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.2.02-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdministratorPackage.DishController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdministratorPackage.DishController">
    <children>
       <ImageView fitHeight="512.0" fitWidth="900.0" layoutY="2.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -28,8 +28,8 @@
       </AnchorPane>
       <AnchorPane layoutY="-1.0" prefHeight="510.0" prefWidth="644.0">
          <children>
-            <TextField fx:id="txtName" layoutX="115.0" layoutY="89.0" />
-            <TextField fx:id="txtPrice" layoutX="115.0" layoutY="130.0" />
+            <TextField fx:id="txtName" layoutX="115.0" layoutY="89.0" prefHeight="26.0" prefWidth="114.0" />
+            <TextField fx:id="txtPrice" layoutX="115.0" layoutY="130.0" prefHeight="26.0" prefWidth="114.0" />
             <Label layoutX="23.0" layoutY="94.0" text="Name" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="16.0" />
@@ -45,35 +45,19 @@
                   <Font name="Microsoft JhengHei" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="txtRestaurant" layoutX="115.0" layoutY="169.0" />
+            <TextField fx:id="txtRestaurant" layoutX="115.0" layoutY="169.0" prefHeight="26.0" prefWidth="114.0" />
             <Label layoutX="306.0" layoutY="14.0" text="ID" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="485.0" layoutY="14.0" text="Name" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="searchId" layoutX="308.0" layoutY="49.0" />
-            <TextField fx:id="searchName" layoutX="485.0" layoutY="49.0" />
-            <TextArea fx:id="resultConsole" layoutX="20.0" layoutY="417.0" prefHeight="65.0" prefWidth="244.0" style="-fx-background-color: #c18640;">
-               <font>
-                  <Font name="Microsoft JhengHei" size="13.0" />
-               </font>
-            </TextArea>
-            <Label layoutX="19.0" layoutY="379.0" text="Result Console" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="17.0" />
-               </font>
-            </Label>
-            <TableView fx:id="dishTable" layoutX="289.0" layoutY="151.0" prefHeight="361.0" prefWidth="357.0">
+            <TextField fx:id="txtId1" layoutX="306.0" layoutY="38.0" />
+            <TableView fx:id="dishTable" layoutX="305.0" layoutY="151.0" prefHeight="341.0" prefWidth="332.0">
                <columns>
                   <TableColumn fx:id="colDishId" prefWidth="50.00006103515625" text="id" />
-                  <TableColumn fx:id="colDishName" prefWidth="158.66668701171875" text="name" />
-                  <TableColumn fx:id="colDishPrice" prefWidth="95.33334350585938" text="price" />
-                  <TableColumn fx:id="colDishRid" prefWidth="50.0" text="r_id" />
+                  <TableColumn fx:id="colDishName" prefWidth="106.19998168945312" text="name" />
+                  <TableColumn fx:id="colDishPrice" prefWidth="81.59994506835938" text="price" />
+                  <TableColumn fx:id="colDishRid" prefWidth="118.4000244140625" text="r_id" />
                </columns>
             </TableView>
             <Button layoutX="35.0" layoutY="236.0" mnemonicParsing="false" onAction="#insertDish" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: b89b5f;" text="Add" textFill="WHITE">
@@ -81,33 +65,13 @@
                   <Font name="Microsoft JhengHei" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="171.0" layoutY="236.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: b89b5f;" text="Clear" textFill="WHITE">
+            <Button layoutX="306.0" layoutY="101.0" mnemonicParsing="false" onAction="#deleteDish" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: b89b5f;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="548.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchAllDishes" prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: b89b5f;" text="All" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="468.0" layoutY="100.0" mnemonicParsing="false" onAction="#deleteDish" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: b89b5f;" text="Delete" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="382.0" layoutY="100.0" mnemonicParsing="false" onAction="#updateDish" prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: b89b5f;" text="Update" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="306.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchDish" prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: b89b5f;" text="Search" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="14.0" />
-               </font>
-            </Button>
-            <Separator layoutX="276.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="513.0" prefWidth="21.0" />
-            <TextField fx:id="txtId" layoutX="115.0" layoutY="49.0" />
+            <Separator layoutX="276.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="514.0" prefWidth="29.0" />
+            <TextField fx:id="txtId" layoutX="115.0" layoutY="49.0" prefHeight="26.0" prefWidth="113.0" />
             <Label layoutX="23.0" layoutY="51.0" text="ID" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="16.0" />

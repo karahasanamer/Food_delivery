@@ -1,5 +1,6 @@
 package AdministratorPackage;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,9 +8,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -17,6 +20,7 @@ import java.sql.SQLException;
 public class DishController {
 
     @FXML private TextField txtId;
+    @FXML private TextField txtId1;
     @FXML private TextField txtName;
     @FXML private TextField txtPrice;
     @FXML private TextField txtRestaurant;
@@ -31,19 +35,32 @@ public class DishController {
     @FXML private TableColumn<Dish,Integer> colDishPrice;
     @FXML private TableColumn<Dish,Integer> colDishRid;
     @FXML private TableView dishTable;
-
+    private ObservableList<Dish> data= FXCollections.observableArrayList(
+            new Dish(1,"item1",1,1),
+            new Dish(2,"item2",2,2),
+            new Dish(3,"item3",3,3)
+    );
     public void insertDish(javafx.event.ActionEvent event)  throws ClassNotFoundException, SQLException {
-       //try {
-           // AdmDishDAO.insertDish(Integer.parseInt(txtId.getText()), txtName.getText(), Integer.parseInt(txtPrice.getText()), Integer.parseInt(txtRestaurant.getText()));
-            resultConsole.setText("Success! Values has been added to DB");
-          //  ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
-          //  populateTable(dishList);
 
-      /*  }catch (SQLException e){
-            System.out.println("Exception occurs in Insertion " +e);
-            e.printStackTrace();
-            throw e;
-        }*/
+       if(txtId.getText().isEmpty()|| txtName.getText().isEmpty()||txtPrice.getText().isEmpty()||txtRestaurant.getText().isEmpty()){
+
+           Alert alert = new Alert(Alert.AlertType.ERROR);
+           alert.setTitle("Error Dialog");
+           alert.setHeaderText(null);
+           alert.setContentText("You did not enter needed information!");
+           alert.showAndWait();
+
+       }else{
+
+
+        data.add(new Dish(Integer.parseInt(txtId.getText()),txtName.getText(),Integer.parseInt(txtPrice.getText()),Integer.parseInt(txtRestaurant.getText())));
+
+
+        dishTable.setItems(data);
+        dishTable.setItems(data);
+
+        dishTable.refresh();
+       }
     }
 
     @FXML
@@ -63,27 +80,39 @@ public class DishController {
 
     @FXML
     private void deleteDish(ActionEvent event) throws ClassNotFoundException,SQLException{
-       /* try {
-            AdmDishDAO.deleteDishById(Integer.parseInt(searchId.getText()));
-            resultConsole.setText("Deleted successfully");
-            ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
-            populateTable(dishList);
+        if(txtId1.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("You did not enter number from the list!");
+            alert.showAndWait();
+        }else if(Integer.parseInt(txtId1.getText())>data.size()||Integer.parseInt(txtId1.getText())<1 ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Item not existed!");
+            alert.showAndWait();
+        }else {
+            int a=Integer.parseInt(txtId1.getText());
+            data.remove(a-1);
 
-        }catch (SQLException e){
-            System.out.println("Error occured while deleting the record");
-            e.printStackTrace();
-            throw e;
-        }*/
+            dishTable.setItems(data);
+            dishTable.setItems(data);
+
+            dishTable.refresh();
+        }
     }
 
     @FXML
     private void initialize() throws Exception{
-       /* colDishId.setCellValueFactory(cellData -> cellData.getValue().getDishId().asObject());
-        colDishName.setCellValueFactory(cellData -> cellData.getValue().getDishName());
-        colDishPrice.setCellValueFactory(cellData -> cellData.getValue().getDishPrice().asObject());
-        colDishRid.setCellValueFactory(cellData -> cellData.getValue().getDishRid().asObject());
-        ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
-        populateTable(dishList);*/
+        colDishPrice.setCellValueFactory(new PropertyValueFactory<Dish,Integer>("Price"));
+        colDishRid.setCellValueFactory(new PropertyValueFactory<Dish,Integer>("Rid"));
+        colDishId.setCellValueFactory(new PropertyValueFactory<Dish,Integer>("id"));
+        colDishName.setCellValueFactory(new PropertyValueFactory<Dish,String>("Name"));
+
+        dishTable.setItems(data);
+        // dishTable.getItems().addAll(data);
+        dishTable.refresh();
 
     }
 
