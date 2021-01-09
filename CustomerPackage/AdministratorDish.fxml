@@ -71,7 +71,7 @@
                   <Font name="Microsoft JhengHei" size="14.0" />
                </font>
             </Button>
-            <Label layoutX="104.0" layoutY="472.0" text="To delete item, write position number on the list on the right!" textFill="WHITE" />
+            <Label layoutX="104.0" layoutY="472.0" text="To delete item, write position number of item you want to delete from the list on the right!" textFill="WHITE" />
             <Label layoutX="104.0" layoutY="487.0" text="To insert item, write id from the left list!" textFill="WHITE" />
          </children>
       </AnchorPane>

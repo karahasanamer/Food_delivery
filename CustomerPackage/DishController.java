@@ -111,7 +111,10 @@ public class DishController {
             alert.showAndWait();
         }else {
             int a=Integer.parseInt(txtId.getText());
+
             data1.remove(a-1);
+            int s=Integer.parseInt(labKm.getText())-a;
+            labKm.setText(s+"");
 
             dishTable1.setItems(data1);
             dishTable1.setItems(data1);
