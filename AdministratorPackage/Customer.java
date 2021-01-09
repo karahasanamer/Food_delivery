@@ -7,15 +7,20 @@ public class Customer {
 
     private StringProperty nameProperty;
     private StringProperty surnameProperty;
+    private String n,s;
 
     public Customer(){
         this.nameProperty = new SimpleStringProperty();
         this.surnameProperty = new SimpleStringProperty();
     }
+    public Customer(String n,String s){
+        this.s=s;
+        this.n=n;
+    }
 
     //for name
     public String getName(){
-        return nameProperty.get();
+        return n;
     }
 
     public void setName(String name) {
@@ -28,7 +33,7 @@ public class Customer {
 
     //for surname
     public String getSurname(){
-        return surnameProperty.get();
+        return s;
     }
 
     public void setSurname(String surname) {

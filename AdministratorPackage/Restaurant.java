@@ -8,18 +8,23 @@ public class Restaurant {
     private StringProperty nameProperty;
     private StringProperty addressProperty;
 
+    private String n,a;
     public Restaurant(){
         this.nameProperty = new SimpleStringProperty();
         this.addressProperty = new SimpleStringProperty();
     }
+    public Restaurant(String n, String a){
+        this.n=n;
+        this.a=a;
+    }
 
     //for name
     public String getName(){
-        return nameProperty.get();
+        return n;
     }
 
     public void setName(String name) {
-        this.nameProperty.set(name);
+        this.n=n;
     }
 
     public StringProperty getRestaurantName(){
@@ -28,11 +33,11 @@ public class Restaurant {
 
     //for address
     public String getAddress(){
-        return addressProperty.get();
+        return a;
     }
 
     public void setAddress(String address) {
-        this.addressProperty.set(address);
+        this.a=a;
     }
 
     public StringProperty getRestaurantAddress(){

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.2.02-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdministratorPackage.RestaurantController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdministratorPackage.RestaurantController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: black;">
          <children>
@@ -56,48 +56,22 @@
                </font>
             </Button>
             <Separator layoutX="279.0" orientation="VERTICAL" prefHeight="188.0" prefWidth="21.0" />
-            <TextField fx:id="searchName" layoutX="388.0" layoutY="34.0" />
-            <TextField layoutX="388.0" layoutY="93.0" />
             <Label layoutX="71.0" layoutY="4.0" text="Add a Restaurant" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="362.0" layoutY="4.0" text="Search" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="315.0" layoutY="37.0" text="Name" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="307.0" layoutY="96.0" text="Address" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="15.0" />
-               </font>
-            </Label>
-            <Button layoutX="471.0" layoutY="148.0" mnemonicParsing="false" onAction="#searchRestaurant" prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: b89b5f;" text="Search" textFill="WHITE">
+            <Button layoutX="512.0" layoutY="148.0" mnemonicParsing="false" onAction="#deleteDish" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: b89b5f;" text="Remove" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="14.0" />
                </font>
             </Button>
-            <TextArea fx:id="resultConsole" layoutX="323.0" layoutY="458.0" prefHeight="25.0" prefWidth="295.0">
-               <font>
-                  <Font name="Microsoft JhengHei" size="14.0" />
-               </font>
-            </TextArea>
-            <Label layoutX="192.0" layoutY="467.0" text="Result Console" textFill="WHITE">
+            <TextField fx:id="txtId" layoutX="376.0" layoutY="35.0" />
+            <Label layoutX="301.0" layoutY="38.0" text="Position" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="15.0" />
                </font>
             </Label>
-            <Button layoutX="377.0" layoutY="148.0" mnemonicParsing="false" onAction="#searchAllRestaurants" prefHeight="29.0" prefWidth="65.0" style="-fx-background-color: b89b5f;" text="All" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft JhengHei" size="14.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
    </children>
