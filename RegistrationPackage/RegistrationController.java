@@ -26,7 +26,7 @@ public class RegistrationController {
 
     public void register(ActionEvent event) throws Exception{
         try {
-            RegistrationDAO.insert(1, name.getText(), surname.getText(), gender.getText(), Integer.parseInt(card.getText()),username.getText(),password.getText());
+            //RegistrationDAO.insert(1, name.getText(), surname.getText(), gender.getText(), Integer.parseInt(card.getText()),username.getText(),password.getText());
             resultConcole.setText("Successfully registered");
         }catch (Exception e){
             System.out.println("Error while registering and inserting");

@@ -27,33 +27,33 @@ public class CustomerController {
 
     @FXML
     private void searchCustomer(ActionEvent event) throws ClassNotFoundException, SQLException {
-        ObservableList<Customer> list = CustomerDAO.searchCust(searchName.getText());
+        /*ObservableList<Customer> list = CustomerDAO.searchCust(searchName.getText());
 
         if (list.size()>0){
             populateTable(list);
             resultConsole.setText("Record has been found");
         }else{
             resultConsole.setText("No such records ");
-        }
+        }*/
     }
 
     @FXML
     private void searchAllCustomers(ActionEvent event) throws ClassNotFoundException,SQLException{
-        ObservableList<Customer> custList = CustomerDAO.getAllRecords();
-        populateTable(custList);
+     //  ObservableList<Customer> custList = CustomerDAO.getAllRecords();
+      //  populateTable(custList);
     }
 
     private void populateTable(ObservableList<Customer> custList){
-        custTable.setItems(custList);
+       // custTable.setItems(custList);
     }
 
     @FXML
     private void initialize() throws Exception{
-        colCustName.setCellValueFactory(cellData -> cellData.getValue().getCustomerName());
+     /*   colCustName.setCellValueFactory(cellData -> cellData.getValue().getCustomerName());
         colCustSurname.setCellValueFactory(cellData -> cellData.getValue().getCustomerSurname());
         ObservableList<Customer> custList = CustomerDAO.getAllRecords();
         populateTable(custList);
-
+*/
     }
 
     public void return_back(ActionEvent event) throws Exception{

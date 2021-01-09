@@ -17,10 +17,52 @@ public class Dish {
         this.priceProperty = new SimpleIntegerProperty();
         this.ridProperty = new SimpleIntegerProperty();
     }
+    int aa,cc,dd;
+    String bb;
+
+    public int getAa() {
+        return aa;
+    }
+
+    public void setAa(int aa) {
+        this.aa = aa;
+    }
+
+    public int getCc() {
+        return cc;
+    }
+
+    public void setCc(int cc) {
+        this.cc = cc;
+    }
+
+    public int getDd() {
+        return dd;
+    }
+
+    public void setDd(int dd) {
+        this.dd = dd;
+    }
+
+    public String getBb() {
+        return bb;
+    }
+
+    public void setBb(String bb) {
+        this.bb = bb;
+    }
+
+    public Dish(int a, String b, int c, int d){
+        this.aa = a;
+        this.bb = b;
+        this.cc = c;
+        this.dd = d;
+    }
+
 
     //for id
     public int getId(){
-        return idProperty.get();
+        return aa;
     }
 
     public void setId(int id) {
@@ -32,7 +74,7 @@ public class Dish {
 
     //for name
     public String getName(){
-        return nameProperty.get();
+        return bb;
     }
 
     public void setName(String name) {
@@ -45,7 +87,7 @@ public class Dish {
 
     //for price
     public int getPrice(){
-        return priceProperty.get();
+        return cc;
     }
 
     public void setPrice(int price) {
@@ -58,7 +100,7 @@ public class Dish {
 
     //for r_id
     public int getRid(){
-        return ridProperty.get();
+        return dd;
     }
 
     public void setRid(int rid) {

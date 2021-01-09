@@ -11,16 +11,25 @@ public class Orders {
     private IntegerProperty priceProperty;
     private IntegerProperty ridProperty;
 
+    private int id,p,ri;
+    private String n;
+
     public Orders(){
         this.idProperty = new SimpleIntegerProperty();
         this.nameProperty = new SimpleStringProperty();
         this.priceProperty = new SimpleIntegerProperty();
         this.ridProperty = new SimpleIntegerProperty();
     }
+    public Orders(int id,String n,int p, int ri){
+        this.id = id;
+        this.n = n;
+        this.p = p;
+        this.ri = ri;
+    }
 
     //for id
     public int getId(){
-        return idProperty.get();
+        return id;
     }
 
     public void setId(int id) {
@@ -32,7 +41,7 @@ public class Orders {
 
     //for name
     public String getName(){
-        return nameProperty.get();
+        return n;
     }
 
     public void setName(String name) {
@@ -45,11 +54,11 @@ public class Orders {
 
     //for price
     public int getPrice(){
-        return priceProperty.get();
+        return p;
     }
 
     public void setPrice(int price) {
-        this.priceProperty.set(price);
+        p=price;
     }
 
     public IntegerProperty getDishPrice(){
@@ -58,7 +67,7 @@ public class Orders {
 
     //for r_id
     public int getRid(){
-        return ridProperty.get();
+        return ri;
     }
 
     public void setRid(int rid) {

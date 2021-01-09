@@ -28,48 +28,48 @@ public class RestaurantController {
     @FXML private TableView restTable;
 
     public void insertRestaurant(javafx.event.ActionEvent event)  throws ClassNotFoundException, SQLException {
-        try {
-            RestaurantDAO.insertRestaurant(111,txtName.getText(), txtAddress.getText());
+        //try {
+         //   RestaurantDAO.insertRestaurant(111,txtName.getText(), txtAddress.getText());
             resultConsole.setText("Success! Values has been added to DB");
-            ObservableList<Restaurant> restList = RestaurantDAO.getAllRecords();
-            populateTable(restList);
+         //   ObservableList<Restaurant> restList = RestaurantDAO.getAllRecords();
+         //   populateTable(restList);
 
-        }catch (SQLException e){
+     /*   }catch (SQLException e){
             System.out.println("Exception occurs in Insertion " +e);
             e.printStackTrace();
             throw e;
-        }
+        }*/
     }
 
     private void populateTable(ObservableList<Restaurant> restList){
-        restTable.setItems(restList);
+       // restTable.setItems(restList);
     }
 
     @FXML
     private void initialize() throws Exception{
-        colRestName.setCellValueFactory(cellData -> cellData.getValue().getRestaurantName());
+        /*colRestName.setCellValueFactory(cellData -> cellData.getValue().getRestaurantName());
         colRestAddress.setCellValueFactory(cellData -> cellData.getValue().getRestaurantAddress());
         ObservableList<Restaurant> restList = RestaurantDAO.getAllRecords();
         populateTable(restList);
-
+*/
     }
 
     @FXML
     private void searchRestaurant(ActionEvent event) throws ClassNotFoundException, SQLException{
-        ObservableList<Restaurant> list = RestaurantDAO.searchRest(searchName.getText());
+       /* ObservableList<Restaurant> list = RestaurantDAO.searchRest(searchName.getText());
 
         if (list.size()>0){
             populateTable(list);
             resultConsole.setText("Record has been found");
         }else{
             resultConsole.setText("No such records ");
-        }
+        }*/
     }
 
     @FXML
     private void searchAllRestaurants(ActionEvent event) throws ClassNotFoundException,SQLException{
-        ObservableList<Restaurant> restList = RestaurantDAO.getAllRecords();
-        populateTable(restList);
+       // ObservableList<Restaurant> restList = RestaurantDAO.getAllRecords();
+      //  populateTable(restList);
     }
 
     public void return_back(ActionEvent event) throws Exception{

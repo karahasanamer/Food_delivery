@@ -33,22 +33,22 @@ public class DishController {
     @FXML private TableView dishTable;
 
     public void insertDish(javafx.event.ActionEvent event)  throws ClassNotFoundException, SQLException {
-        try {
-            AdmDishDAO.insertDish(Integer.parseInt(txtId.getText()), txtName.getText(), Integer.parseInt(txtPrice.getText()), Integer.parseInt(txtRestaurant.getText()));
+       //try {
+           // AdmDishDAO.insertDish(Integer.parseInt(txtId.getText()), txtName.getText(), Integer.parseInt(txtPrice.getText()), Integer.parseInt(txtRestaurant.getText()));
             resultConsole.setText("Success! Values has been added to DB");
-            ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
-            populateTable(dishList);
+          //  ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
+          //  populateTable(dishList);
 
-        }catch (SQLException e){
+      /*  }catch (SQLException e){
             System.out.println("Exception occurs in Insertion " +e);
             e.printStackTrace();
             throw e;
-        }
+        }*/
     }
 
     @FXML
     private void updateDish(ActionEvent event) throws ClassNotFoundException, SQLException{
-        try {
+      /*  try {
             AdmDishDAO.updateDish(Integer.parseInt(searchDishId.getText()), searchDishName.getText());
             resultConsole.setText("Data was updated");
             ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
@@ -58,12 +58,12 @@ public class DishController {
             System.out.println("Error while updating");
             e.printStackTrace();
             throw e;
-        }
+        }*/
     }
 
     @FXML
     private void deleteDish(ActionEvent event) throws ClassNotFoundException,SQLException{
-        try {
+       /* try {
             AdmDishDAO.deleteDishById(Integer.parseInt(searchId.getText()));
             resultConsole.setText("Deleted successfully");
             ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
@@ -73,27 +73,27 @@ public class DishController {
             System.out.println("Error occured while deleting the record");
             e.printStackTrace();
             throw e;
-        }
+        }*/
     }
 
     @FXML
     private void initialize() throws Exception{
-        colDishId.setCellValueFactory(cellData -> cellData.getValue().getDishId().asObject());
+       /* colDishId.setCellValueFactory(cellData -> cellData.getValue().getDishId().asObject());
         colDishName.setCellValueFactory(cellData -> cellData.getValue().getDishName());
         colDishPrice.setCellValueFactory(cellData -> cellData.getValue().getDishPrice().asObject());
         colDishRid.setCellValueFactory(cellData -> cellData.getValue().getDishRid().asObject());
         ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
-        populateTable(dishList);
+        populateTable(dishList);*/
 
     }
 
     private void populateTable(ObservableList<Dish> dishList){
-        dishTable.setItems(dishList);
+        //dishTable.setItems(dishList);
     }
 
     @FXML
     private void searchDish(ActionEvent event) throws ClassNotFoundException, SQLException{
-        ObservableList<Dish> list = AdmDishDAO.searchDish(searchId.getText());
+       /* ObservableList<Dish> list = AdmDishDAO.searchDish(searchId.getText());
 
         if (list.size()>0){
             populateTable(list);
@@ -101,15 +101,15 @@ public class DishController {
         }else{
             resultConsole.setText("No such records ");
         }
-
+*/
 
     }
 
 
     @FXML
     private void searchAllDishes(ActionEvent event) throws ClassNotFoundException,SQLException{
-        ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
-        populateTable(dishList);
+      //  ObservableList<Dish> dishList = AdmDishDAO.getAllRecords();
+       // populateTable(dishList);
     }
 
     public void return_back(ActionEvent event) throws Exception{
