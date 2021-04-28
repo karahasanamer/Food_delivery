@@ -35,6 +35,7 @@ public class DishController {
     @FXML private TableColumn<Dish,Integer> colDishPrice;
     @FXML private TableColumn<Dish,Integer> colDishRid;
     @FXML private TableView dishTable;
+
     private ObservableList<Dish> data= FXCollections.observableArrayList(
             new Dish(1,"item1",1,1),
             new Dish(2,"item2",2,2),

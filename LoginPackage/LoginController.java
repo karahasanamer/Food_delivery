@@ -2,7 +2,7 @@ package LoginPackage;
 
 import AdministratorPackage.AdministratorApplication;
 import CustomerPackage.CustomerApplication;
-import DBUtil.DBUtil;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,15 +31,15 @@ public class LoginController {
 
                     AdministratorApplication administratorApplication = new AdministratorApplication();
                     administratorApplication.start(new Stage());
-                    Stage stage = DBUtil.getStage();
-                    stage.close();
+                   // Stage stage = DBUtil.getStage();
+                   // stage.close();
                 }
 
                 else {
                     CustomerApplication customerApplication = new CustomerApplication();
                     customerApplication.start(new Stage());
-                    Stage stage = DBUtil.getStage();
-                    stage.close();
+                  //  Stage stage = DBUtil.getStage();
+                    //stage.close();
                 }
 
                 System.out.println("Connected succesfully");

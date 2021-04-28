@@ -1,7 +1,7 @@
 package RegistrationPackage;
 
 import AdministratorPackage.Restaurant;
-import AdministratorPackage.RestaurantDAO;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

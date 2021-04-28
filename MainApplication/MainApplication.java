@@ -1,6 +1,6 @@
 package MainApplication;
 
-import DBUtil.DBUtil;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +14,7 @@ public class MainApplication extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/LoginPackage/LoginView.fxml"));
         Scene scene = new Scene(root);
-        DBUtil.setStage(primaryStage);
+      //  DBUtil.setStage(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
